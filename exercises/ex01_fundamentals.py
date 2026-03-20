@@ -312,15 +312,11 @@ def _():
     # - "average": average of all items
 
     def analyze_numbers(numbers):
-        # Write your code here
-        result = {count: len(numbers),
-                  sum: sum(numbers),}
-        if len(numbers) > 0:
-            result["average"] = sum(numbers) / len(numbers)          
+        # Write your code here        
         result = {
-            "count": 0,
-            "sum": 0,
-            "average": 0
+            "count": len(numbers),
+            "sum": sum(numbers),
+            "average": sum(numbers) / len(numbers) if numbers else 0
         }
         return result
 
