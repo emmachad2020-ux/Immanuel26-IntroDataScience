@@ -1,14 +1,14 @@
 # /// script
 # requires-python = ">=3.12"
 # dependencies = [
-#     "marimo",
+#     "marimo>=0.20.2",
 #     "pyzmq",
 # ]
 # ///
 
 import marimo
 
-__generated_with = "0.19.6"
+__generated_with = "0.20.4"
 app = marimo.App(width="medium")
 
 
@@ -131,20 +131,22 @@ def _():
     # - year: publication year (integer)
     # - pages: number of pages (integer)
 
-    book = {title: "Life in a year",
-            author: "Emmanuel",
-            year: 2023,
-            pages: 3000
+    book = {
+        "title": "Life in a year",
+        "author": "Emmanuel",
+        "year": 2023,
+        "pages": 3000
     }
 
-    # TODO: Print the book title and author
-    print(f"Title: {book['title']}")  # Fix this line
-    print(f"Author: {book['author']}")  # Fix this line
+    # Print the book title and author
+    print(f"Title: {book['title']}")
+    print(f"Author: {book['author']}")
 
-    # TODO: Add a new key "genre" with a value
+    # Add a new key "genre"
     book["genre"] = "auto-biography"
-    # TODO: Update the year to a different value
-    book["year"] = 2024 # Update year
+
+    # Update the year
+    book["year"] = 2024
 
     print("\nUpdated book:", book)
     return
@@ -169,11 +171,11 @@ def _():
     temperature = 30  # Try changing this value
 
     # Write your if/elif/else statements here
-    if temperature > 30:
+    if temperature >= 30:
         print("It's hot!")
-    elif temperature > 20:
+    elif temperature >= 20:
         print("It's warm")
-    elif temperature > 10:
+    elif temperature >= 10:
         print("It's cool")
     else:
         print("It's cold!")
@@ -192,7 +194,7 @@ def _(mo):
 def _():
     # TODO: Loop through this list and print each number multiplied by 3
     numbers = [2, 4, 6, 8, 10]
-    
+
     # Write your loop here
     for number in numbers:
         print(number * 3)
@@ -205,10 +207,9 @@ def _():
     total = 0
 
     # Write your loop here
-    number = 2, 4, 6, 8, 10
     total = 0
-    for number in range(1, 101):
-        total += number
+    for n in range(1, 101):
+        total += n
 
     print(f"Sum of 1 to 100: {total = }")
     return
@@ -357,6 +358,7 @@ def _(mo):
 @app.cell
 def _():
     import marimo as mo
+
     return (mo,)
 
 
